@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>2048 game</title>
+</head>
+<body>
+    <div id="game-container">
+        <h1 id="score-container">Score: <span id="score">0</span></h1>
+        <div id="grid-container"></div>
+        <button id="reset-btn" onclick="resetGame()">Yangi o'yin</button>
+      </div>
+      <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>O'yin tamom :(</h2>
+          <p>Yakuniy ballingiz: <span id="final-score"></span></p>
+          <button class="play-again" onclick="resetGame()">Qayta o'ynang</button>
+        </div>
+      </div>
+      <script src="./js/main.js"></script>
+</body>
+</html>
