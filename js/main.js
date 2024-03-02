@@ -1,6 +1,45 @@
 const gridSize = 4;
 let grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(0));
 let score = 0;
+let touchStartX = 0;
+let touchStartY = 0;
+
+const handleTouchStart = (event) => {
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
+};
+
+const handleTouchMove = (event) => {
+  if (!touchStartX || !touchStartY) {
+    return;
+  }
+
+  const touchEndX = event.touches[0].clientX;
+  const touchEndY = event.touches[0].clientY;
+
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Horizontal swipe
+    if (deltaX > 0) {
+      move("right");
+    } else {
+      move("left");
+    }
+  } else {
+    // Vertical swipe
+    if (deltaY > 0) {
+      move("down");
+    } else {
+      move("up");
+    }
+  }
+
+  // Reset touch start coordinates
+  touchStartX = 0;
+  touchStartY = 0;
+};
 
 const isGameOver = () => {
 
@@ -224,6 +263,8 @@ const handleKeyPress = (evt) => {
 
 const resetButton = document.getElementById("reset-btn");
 resetButton.addEventListener("click", resetGame);
-
+const gridContainer = document.getElementById("grid-container");
+gridContainer.addEventListener("touchstart", handleTouchStart);
+gridContainer.addEventListener("touchmove", handleTouchMove);
 document.addEventListener("keydown", handleKeyPress);
 resetGame(); // O'yinni boshlang
