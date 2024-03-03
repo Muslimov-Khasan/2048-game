@@ -115,6 +115,17 @@ const move = (direction) => {
   if (isGameOver()) {
     openGameOverModal();
   }
+
+  setTimeout(() => {
+    if (moved) {
+      generateTile();
+      updateGrid();
+
+      if (isGameOver()) {
+        openGameOverModal();
+      }
+    }
+  }, 2000)
   const moveLeft = () => {
     for (let row = 0; row < gridSize; row++) {
       for (let col = 1; col < gridSize; col++) {
