@@ -1,4 +1,10 @@
 const gridSize = 4;
+// Example JavaScript code to trigger the animation
+// Assume tile elements have a class "tile" and the conditions for splitting are met
+document.querySelectorAll('.tile').forEach(tile => {
+  tile.classList.add('split-animation');
+});
+
 let grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(0));
 let score = 0;
 let touchStartX = 0;
