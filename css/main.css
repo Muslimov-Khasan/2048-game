@@ -8,6 +8,7 @@
     justify-content: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
     background-color: #FAF8EFFF;
   }
   
@@ -45,6 +46,7 @@
     background-color: #cdc1b4;
     border-radius: 5px;
     color: #776E65FF;
+    
   }
   
   .tile-2 {
@@ -147,5 +149,3 @@
   .close:hover {
     color: black;
   }
-  
-  
