@@ -11,7 +11,6 @@ let touchStartX = 0;
 let touchStartY = 0;
 
 const handleTouchStart = (event) => {
-  debugger;
   touchStartX = event.touches[0].clientX;
   touchStartY = event.touches[0].clientY;
 };
@@ -49,11 +48,10 @@ const handleTouchMove = (event) => {
 };
 
 const isGameOver = () => {
-
   for (let row = 0; row < gridSize; row++) {
     for (let col = 0; col < gridSize; col++) {
       if (grid[row][col] === 0) {
-        return false; //Bo'sh katak bor, shuning uchun o'yin tugamaydi
+        return false;
       }
     }
   }
