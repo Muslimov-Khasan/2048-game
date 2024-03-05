@@ -11,6 +11,7 @@ let touchStartX = 0;
 let touchStartY = 0;
 
 const handleTouchStart = (event) => {
+  debugger;
   touchStartX = event.touches[0].clientX;
   touchStartY = event.touches[0].clientY;
 };
