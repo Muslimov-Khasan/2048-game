@@ -282,4 +282,5 @@ const gridContainer = document.getElementById("grid-container");
 gridContainer.addEventListener("touchstart", handleTouchStart);
 gridContainer.addEventListener("touchmove", handleTouchMove);
 document.addEventListener("keydown", handleKeyPress);
-resetGame(); // O'yinni boshlang
+
+resetGame(); // Start the game
