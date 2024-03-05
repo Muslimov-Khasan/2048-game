@@ -209,7 +209,7 @@ const move = (direction) => {
             currentRow++;
             moved = true;
           }
-
+  
           if (
             currentRow < gridSize - 1 &&
             grid[currentRow + 1][col] === grid[currentRow][col]
@@ -220,6 +220,16 @@ const move = (direction) => {
             moved = true;
           }
         }
+      }
+    }
+  
+    if (moved) {
+      generateTile();
+      updateGrid();
+  
+      if (isGameOver()) {
+        openGameOverModal();
+        closeModal(); // Close the modal if the game is over
       }
     }
   };
