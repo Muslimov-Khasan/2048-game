@@ -26,13 +26,13 @@
   
   #grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); /* Responsive grid */
     gap: 10px;
     background-color: #bbada0;
     padding: 10px;
     border-radius: 5px;
-    max-width: 400px; 
-    margin: 0 auto; 
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   @keyframes split {
@@ -155,4 +155,11 @@
   
   .close:hover {
     color: black;
+  }
+
+  @media (min-width: 600px) {
+    /* Adjust styles for screens with a minimum width of 600px */
+    #grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
