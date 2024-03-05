@@ -44,7 +44,7 @@
   
   .tile {
     width: 100%;
-    height: 100px; /* Reduced tile height for smaller screens */
+    height: 60px; /* Reduced tile height for smaller screens */
     display: flex;
     align-items: center;
     justify-content: center;
